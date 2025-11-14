@@ -1,0 +1,248 @@
+/* ================================
+   GLOBAL PAGE SETTINGS
+================================ */
+:root {
+    --bg-color: #000;
+    --text-color: #ffb7e9;
+    --accent: #ff7ccf;
+    --cursor-glow: drop-shadow(0 0 4px #ff7ccf);
+  }
+  
+  /* Pink Mode Variables */
+  .theme-pink {
+    --bg-color: #000000;
+    --text-color: #ff8ad6;
+    --accent: #ff4fcf;
+    --cursor-glow: drop-shadow(0 0 6px #ff4fcf);
+  }
+  
+  /* Galaxy Mode Variables */
+  .theme-galaxy {
+    --bg-color: radial-gradient(circle at top, #3a0066, #000);
+    --text-color: #dcc7ff;
+    --accent: #b388ff;
+    --cursor-glow: drop-shadow(0 0 6px #c28cff);
+  }
+  
+  /* Barbie Mode Variables */
+  .theme-barbie {
+    --bg-color: linear-gradient(135deg, #ff4fcf, #ff96da);
+    --text-color: #ffffff;
+    --accent: #ffe4f7;
+    --cursor-glow: drop-shadow(0 0 6px #ffffff);
+  }
+  
+  /* Cyber Mode Variables */
+  .theme-cyber {
+    --bg-color: #000000;
+    --text-color: #39ff14;
+    --accent: #00ff41;
+    --cursor-glow: drop-shadow(0 0 6px #00ff41);
+  }
+  
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Courier New", monospace;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+  
+  /* ================================
+     SPARKLE CURSOR
+  ================================ */
+  body {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><text y="20" font-size="20">✦</text></svg>') 0 0, auto;
+  }
+  
+  /* ================================
+     BOOT-UP SCREEN
+  ================================ */
+  #boot-screen {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    color: #ff8ad6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+  }
+  
+  #boot-text {
+    white-space: pre-wrap;
+    font-size: 18px;
+  }
+  
+  /* ================================
+     THEME SWITCHER
+  ================================ */
+  #theme-switcher {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+  }
+  
+  #theme-switcher button {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 6px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  
+  #theme-switcher button:hover {
+    background: var(--accent);
+    color: #000;
+  }
+  
+  /* ================================
+     FLOATING SPARKLES BACKGROUND
+  ================================ */
+  #sparkle-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: floatSparkle linear infinite;
+  }
+  
+  @keyframes floatSparkle {
+    from {
+      transform: translateY(0) scale(1);
+    }
+    to {
+      transform: translateY(-800px) scale(0.2);
+    }
+  }
+  
+  /* ================================
+     MISSION PANEL
+  ================================ */
+  #mission-box {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 260px;
+    padding: 15px;
+    border: 2px solid var(--accent);
+    color: var(--text-color);
+    background: rgba(255, 182, 193, 0.05);
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  
+  #mission-box h3 {
+    margin-top: 0;
+    text-align: center;
+    font-weight: bold;
+    color: var(--accent);
+  }
+  
+  #mission-box li.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  
+  #mission-box li.completed::after {
+    content: " ✓";
+    color: var(--accent);
+    font-weight: bold;
+  }
+  
+  /* ================================
+     TERMINAL HEADER
+  ================================ */
+  #header pre {
+    color: var(--accent);
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  /* ================================
+     TERMINAL
+  ================================ */
+  #terminal {
+    background: rgba(255, 182, 193, 0.07);
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  
+  #output {
+    white-space: pre-wrap;
+    height: 60vh;
+    overflow-y: auto;
+    font-size: 15px;
+  }
+  
+  .prompt {
+    color: var(--accent);
+    margin-right: 8px;
+  }
+  
+  #input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  #commandInput {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  /* ================================
+     GLITCH EFFECT
+  ================================ */
+  #glitch {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: none;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(255, 182, 193, 0.3) 0px,
+      rgba(255, 182, 193, 0.3) 2px,
+      transparent 2px,
+      transparent 4px
+    );
+    animation: glitch 0.2s infinite;
+  }
+  
+  @keyframes glitch {
+    0% { opacity: 0.1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 0.15; }
+  }
+  

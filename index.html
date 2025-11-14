@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ROAR Hacker Terminal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- FULL-SCREEN BOOT UP -->
+  <div id="boot-screen">
+    <pre id="boot-text"></pre>
+  </div>
+
+  <!-- THEME SWITCHER -->
+  <div id="theme-switcher">
+    <button data-theme="pink">Pink</button>
+    <button data-theme="galaxy">Galaxy</button>
+    <button data-theme="barbie">Barbie</button>
+    <button data-theme="cyber">Cyber</button>
+  </div>
+
+  <!-- FLOATING SPARKLE BACKGROUND -->
+  <div id="sparkle-container"></div>
+
+  <!-- MISSION PANEL -->
+  <div id="mission-box">
+    <h3>MISSION OBJECTIVES</h3>
+    <ul>
+      <li id="m1">1. Scan the system</li>
+      <li id="m2">2. Unlock admin access</li>
+      <li id="m3">3. Decode the secret message</li>
+      <li id="m4">4. Override the firewall</li>
+      <li id="m5">5. Trace the root cause</li>
+      <li id="m6">6. Empower yourself</li>
+      <li id="m7">7. Reveal the final flag</li>
+    </ul>
+  </div>
+
+  <!-- TERMINAL HEADER -->
+  <div id="header">
+    <pre>
+╔═══════════════════════════════════════════╗
+         ROAR SISTERHOOD TERMINAL
+╚═══════════════════════════════════════════╝
+    </pre>
+  </div>
+
+  <!-- TERMINAL -->
+  <div id="terminal">
+    <div id="output"></div>
+    <div id="input-line">
+      <span class="prompt">&gt;</span>
+      <input id="commandInput" type="text" autofocus autocomplete="off" />
+    </div>
+  </div>
+
+  <!-- GLITCH EFFECT -->
+  <div id="glitch"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
